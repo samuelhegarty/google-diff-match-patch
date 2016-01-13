@@ -1,4 +1,4 @@
-package com.googlecode.diffmatchpatch;
+package com.googlecode.diffmatchpatch.core;
 
 /**
  * Created by shegarty on 12/01/2016.

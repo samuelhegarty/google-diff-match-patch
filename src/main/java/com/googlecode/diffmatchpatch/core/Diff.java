@@ -1,4 +1,4 @@
-package com.googlecode.diffmatchpatch;
+package com.googlecode.diffmatchpatch.core;
 
 /**
  * Class representing one diff operation.
@@ -7,11 +7,11 @@ public class Diff{
 	/**
 	 * One of: INSERT, DELETE or EQUAL.
 	 */
-	public Operation operation;
+	protected Operation operation;
 	/**
 	 * The text associated with this diff operation.
 	 */
-	public String text;
+	protected String text;
 
 	/**
 	 * Constructor.  Initializes the diff with the provided values.
@@ -79,5 +79,13 @@ public class Diff{
 			return false;
 		}
 		return true;
+	}
+
+	public Operation getOperation(){
+		return operation;
+	}
+
+	public String getText(){
+		return text;
 	}
 }

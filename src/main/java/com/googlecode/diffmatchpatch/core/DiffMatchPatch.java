@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.googlecode.diffmatchpatch;
+package com.googlecode.diffmatchpatch.core;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -81,15 +81,15 @@ public class DiffMatchPatch{
 	private final short patchMargin;// = 4;
 
 	public DiffMatchPatch(){
-		this(1.0f, (short)4, 0.5f, 1000, 0.5f, (short)4);
+		this(new DiffSettings());
 	}
-	public DiffMatchPatch(float diffTimeout, short diffEditCost, float matchThreshold, int matchDistance, float patchDeleteThreshold, short patchMargin){
-		this.diffTimeout = diffTimeout;
-		this.diffEditCost = diffEditCost;
-		this.matchThreshold = matchThreshold;
-		this.matchDistance = matchDistance;
-		this.patchDeleteThreshold = patchDeleteThreshold;
-		this.patchMargin = patchMargin;
+	public DiffMatchPatch(DiffSettings settings){
+		this.diffTimeout = settings.getDiffTimeout();
+		this.diffEditCost = settings.getDiffEditCost();
+		this.matchThreshold = settings.getMatchThreshold();
+		this.matchDistance = settings.getMatchDistance();
+		this.patchDeleteThreshold = settings.getPatchDeleteThreshold();
+		this.patchMargin = settings.getPatchMargin();
 	}
 	/**
 	 * The number of bits in an int.

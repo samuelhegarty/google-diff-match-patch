@@ -1,4 +1,4 @@
-package com.googlecode.diffmatchpatch;
+package com.googlecode.diffmatchpatch.core;
 
 /**
  * The data structure representing a diff is a Linked list of Diff objects:
